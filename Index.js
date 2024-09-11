@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Obtener el formulario
     const loginForm = document.querySelector("form");
 
-    // Agregar un evento de escucha al formulario cuando se envía
     loginForm.addEventListener("submit", function (event) {
-        // Obtener los valores de los campos de entrada
         const username = document.getElementById("username").value.trim();
         const password = document.getElementById("password").value.trim();
 
@@ -14,8 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             alert("Por favor, complete todos los campos.");
         } else {
-            // Aquí puedes añadir la lógica para autenticar al usuario
+            // Evitar el comportamiento predeterminado del formulario
+            event.preventDefault();
+            
+            // Mensaje de inicio de sesión exitoso (esto puede ser opcional)
             alert("Inicio de sesión exitoso.");
         }
     });
 });
+
